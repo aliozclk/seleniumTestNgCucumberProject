@@ -6,11 +6,11 @@
 
   @tag2
   Scenario Outline: Positive Test of Submitting the order
-   Given Logged in with username "name@email.com" and password "pass-word"
-   When I add product <productName> to Cart
-   And Checkout <productName> and submit the order
+   Given Logged in with username <name> and password <password>
+   When I add product <brandName> to Cart
+   And Checkout <brandName> and submit the order
    Then I verify the <status> in step
 
    Examples:
-    | name           | password  | productName |
-    | name@email.com | pass-word |
+    | name           | password  | brandName |  |
+    | name@email.com | pass-word | POLO      |  |
