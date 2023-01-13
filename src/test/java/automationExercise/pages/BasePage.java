@@ -22,4 +22,8 @@ public class BasePage {
         String locator = "//a[text() = '" + component + "']";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).click();
     }
+
+    public WebDriver giveDriver(){
+        return driver;
+    }
 }

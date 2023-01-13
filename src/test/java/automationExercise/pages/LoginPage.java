@@ -26,6 +26,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/h2" )
     private WebElement loginMessage;
 
+    @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/form/p")
+    private WebElement loginErrorMessage;
+
 
 
 
@@ -65,4 +68,7 @@ public class LoginPage extends BasePage {
         return loginMessage;
     }
 
+    public WebElement getLoginErrorMessage() {
+        return loginErrorMessage;
+    }
 }
