@@ -19,6 +19,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a")
     private WebElement deleteAccountBtn;
 
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")
+    private WebElement logoutBtn;
+
 
     public void clickSignupLoginButton() {
         SignupLoginButton.click();
@@ -43,5 +46,9 @@ public class HomePage extends BasePage {
 
     public WebElement getDeleteAccountBtn() {
         return deleteAccountBtn;
+    }
+
+    public WebElement getLogoutBtn() {
+        return logoutBtn;
     }
 }

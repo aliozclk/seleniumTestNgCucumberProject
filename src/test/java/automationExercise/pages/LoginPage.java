@@ -23,6 +23,11 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//*[@id='form']/div/div/div[3]/div/h2")
     private WebElement newUserSignupMessageWebElement;
 
+    @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/h2" )
+    private WebElement loginMessage;
+
+
+
 
 
     public void setSignupEmailAddressBox(String emailAddress) {
@@ -55,4 +60,9 @@ public class LoginPage extends BasePage {
     public void setSignupNewUserName(String newUserName) {
         signupNewUserNameBox.sendKeys(newUserName);
     }
+
+    public WebElement getLoginMessage() {
+        return loginMessage;
+    }
+
 }
