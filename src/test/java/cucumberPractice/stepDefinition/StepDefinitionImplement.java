@@ -1,4 +1,4 @@
-package cucumber.stepDefinition;
+package cucumberPractice.stepDefinition;
 
 import automationExercise.testPractices.BaseTest;
 import automationExercise.utilities.Driver;
