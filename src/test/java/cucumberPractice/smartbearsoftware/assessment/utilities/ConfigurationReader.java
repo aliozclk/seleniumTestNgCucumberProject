@@ -1,4 +1,4 @@
-package smartbearsoftwareCucumber.assessment.utilities;
+package cucumberPractice.smartbearsoftware.assessment.utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -6,9 +6,8 @@ import java.util.Properties;
 public class ConfigurationReader {
     private static Properties configFile;
 
-
-
     static {
+
         try {
             // Location of properties
             String path = System.getProperty("user.dir") + "/configuration2.properties";
@@ -37,9 +36,5 @@ public class ConfigurationReader {
         return configFile.getProperty(keyName);
     }
 
-
-    public static String get(String browser) {
-        return configFile.getProperty("browser");
-    }
 
 }

@@ -1,4 +1,4 @@
-package smartbearsoftwareCucumber.assessment.pages;
+package cucumberPractice.smartbearsoftware.assessment.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,18 +23,17 @@ public class WebOrdersPage extends BasePage {
     @FindBy(xpath = "//a[@href='Process.aspx']")
     private WebElement orderButton;
 
-
-    public String getCurrentUrl() {
+    public String getCurrentUrl(){
         return driver.getCurrentUrl();
     }
 
-    public String getDisplayedUserName() {
+    public String getDisplayedUserName(){
         return displayedUserName.getText();
     }
 
-    public String getHeaderAsString(Integer levelOfHeader) {
-        String result = null;
-        switch (levelOfHeader) {
+    public String getHeaderAsString(Integer levelOfHeader){
+        String result = null ;
+        switch (levelOfHeader){
             case 1:
                 result = levelOneHeader.getText();
                 break;
@@ -42,13 +41,14 @@ public class WebOrdersPage extends BasePage {
         return result;
     }
 
-    public void clickLogoutButton() {
+    public void clickLogoutButton(){
         logoutButton.click();
     }
 
-    public boolean isVerticalMenuBarItemDisplayed(String verticalMenuBarItem) {
+    public boolean isVerticalMenuBarItemDisplayed(String verticalMenuBarItem){
         boolean result = false;
-        switch (verticalMenuBarItem) {
+
+        switch (verticalMenuBarItem){
             case "View all orders":
                 result = viewAllOrdersButton.isDisplayed();
                 break;

@@ -1,12 +1,12 @@
-package smartbearsoftwareCucumber.assessment.pages;
+package cucumberPractice.smartbearsoftware.assessment.pages;
 
-
+import cucumberPractice.smartbearsoftware.assessment.utilities.ConfigurationReader;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import smartbearsoftwareCucumber.assessment.utilities.ConfigurationReader;
 
 public class LoginPage extends BasePage {
+
     @FindBy(id = "ctl00_MainContent_username")
     private WebElement userNameInputBoxElement;
 
@@ -19,33 +19,32 @@ public class LoginPage extends BasePage {
     @FindBy(id = "ctl00_MainContent_status")
     private WebElement errorMessage;
 
-
-    public void login() {
+    public void login(){
         String usernameValue = ConfigurationReader.getProperty("username");
         String passwordValue = ConfigurationReader.getProperty("password");
         userNameInputBoxElement.sendKeys(usernameValue);
         passwordInputBoxElement.sendKeys(passwordValue, Keys.ENTER);
     }
 
-
-    public void enterUserNameValue(String usernameValue) {
+    public void enterUserNameValue(String usernameValue){
         userNameInputBoxElement.sendKeys(usernameValue);
-
     }
 
-    public void enterPasswordValue(String passwordValue) {
+    public void enterPasswordValue(String passwordValue){
         passwordInputBoxElement.sendKeys(passwordValue);
     }
 
-    public void clickLoginButton() {
+    public void clickLoginButton(){
         loginButton.click();
     }
 
-    public String getErrorMessage() {
+    public String getErrorMessage(){
         return errorMessage.getText();
     }
 
-    public String getCurrentUrl() {
-        return  driver.getCurrentUrl();
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
     }
+
+
 }
