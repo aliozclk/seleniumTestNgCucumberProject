@@ -1,15 +1,11 @@
 package automationExercise.testPractices;
 
 import automationExercise.utilities.BrowserUtils;
-import automationExercise.utilities.ConfigurationReader;
 import automationExercise.utilities.Driver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import java.util.Iterator;
-import java.util.Set;
 
 public class TestCase_3_IncorrectEmailAndPassword extends BaseTest {
 
@@ -24,24 +20,6 @@ public class TestCase_3_IncorrectEmailAndPassword extends BaseTest {
     //2. Navigate to url 'http://automationexercise.com'
 
 
-    @BeforeSuite
-    public void setUpSuite() {
-
-        String url = ConfigurationReader.getProperty("url");
-        String browser = ConfigurationReader.getProperty("browser");
-
-        Driver.getDriver().get(url);
-        System.out.println("-----------TEST INFO --------------\n\tURL : " + url + "\n\tBrowser : " + browser);
-        BrowserUtils.wait(1);
-
-        //ByPass AdBlocker-Extension page
-        Set<String> handles = Driver.getDriver().getWindowHandles();
-        Iterator<String> it = handles.iterator();
-        String parentWindow = it.next();
-        Driver.getDriver().switchTo().window(parentWindow);
-
-        Driver.getDriver().manage().deleteAllCookies();
-    }
 
     @Test(priority = 0)
     public void  loginWıthIncorrectEmailAndPasswordTest(){
@@ -74,9 +52,4 @@ public class TestCase_3_IncorrectEmailAndPassword extends BaseTest {
 
     }
 
-    @AfterSuite
-    public void afterTest() {
-        // Perform cleanup tasks or generate test reports here
-        Driver.getDriver().quit();
-    }
 }
