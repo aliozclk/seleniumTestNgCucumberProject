@@ -65,6 +65,9 @@ public class OrderPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"ctl00_MainContent_fmwOrder\"]/tbody/tr/td/div/strong")
     WebElement successMessage;
 
+    @FindBy(id = "ctl00_MainContent_fmwOrder_txtUnitPrice")
+    WebElement pricePerUnit;
+
     public void selectProduct(String productName){
         dropdown.selectByVisibleText(productName);
     }
@@ -72,6 +75,14 @@ public class OrderPage extends BasePage{
     public void setQuantity(String quantity){
         quantityBox.clear();
         quantityBox.sendKeys(quantity);
+    }
+
+    public String getPrice(){
+        return pricePerUnit.getText();
+    }
+
+    public WebElement getSuccessMessage() {
+        return successMessage;
     }
 
     public void clickOnCalculate(){

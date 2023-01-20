@@ -22,11 +22,15 @@ public class WebOrdersPage extends BasePage {
     @FindBy(xpath = "//a[@href='Products.aspx']")
     private WebElement viewAllOProductsButton;
 
-    @FindBy(xpath = "//a[@href='Process.aspx']")
+
+
+    @FindBy(xpath = "//*[@id=\"ctl00_menu\"]/li[3]/a")
     private WebElement orderButton;
 
     @FindBy(xpath = "//*[@id=\"ctl00_MainContent_orderGrid\"]/tbody/tr[2]/td")
     List<WebElement> lastOrderLogs;
+
+
 
     public String getCurrentUrl(){
         return driver.getCurrentUrl();
@@ -46,6 +50,9 @@ public class WebOrdersPage extends BasePage {
         return result;
     }
 
+    public void clickOnOrderButton() {
+        orderButton.click();
+    }
     public void clickLogoutButton(){
         logoutButton.click();
     }
@@ -100,5 +107,9 @@ public class WebOrdersPage extends BasePage {
     }
     public String getCardNumLog(){
         return lastOrderLogs.get(11).getText();
+    }
+
+    public String getExpireDate(){
+        return lastOrderLogs.get(12).getText();
     }
 }
