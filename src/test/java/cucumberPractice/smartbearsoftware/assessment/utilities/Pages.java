@@ -9,7 +9,7 @@ public class Pages {
     private LoginPage loginPage;
 
     public Pages() {
-        this.webOrdersPage = new  WebOrdersPage();
+        this.webOrdersPage = new WebOrdersPage();
         this.loginPage = new  LoginPage();
     }
 

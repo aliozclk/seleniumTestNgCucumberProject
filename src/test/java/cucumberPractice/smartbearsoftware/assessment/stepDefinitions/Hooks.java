@@ -2,17 +2,11 @@ package cucumberPractice.smartbearsoftware.assessment.stepDefinitions;
 
 import cucumberPractice.smartbearsoftware.assessment.utilities.ConfigurationReader;
 import cucumberPractice.smartbearsoftware.assessment.utilities.Driver;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.Scenario;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.BeforeTest;
-
-import java.util.Iterator;
-import java.util.Set;
 
 public class Hooks {
 
