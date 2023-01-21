@@ -5,11 +5,12 @@
       Given the user is on the login page
       And the user logged in with valid credentials, "Tester" as username and "test" as password
       Then the user is on the web orders page
+      And the user clicks on the order link
 
 
       Scenario Outline: The user selects product and quantity then calculates total price.
         #Product entries
-        And the user clicks on the order link
+
         When the user is on the order page
         And the user sets product type as "<productName>"
         And the user sets "<quantity>" of product
