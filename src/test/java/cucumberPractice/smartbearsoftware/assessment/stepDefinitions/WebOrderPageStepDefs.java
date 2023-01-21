@@ -16,11 +16,11 @@ public class WebOrderPageStepDefs extends BaseStep {
         pages.getLoginPage().clickLoginButton();
     }
 
-    @Given("the user is on the web orders page")
-    public void the_user_is_on_the_web_orders_page(){
-        BrowserUtils.wait(1);
-        Assert.assertEquals(pages.getWebOrdersPage().getCurrentUrl(), "http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/");
-    }
+//    @Given("the user is on the web orders page")
+//    public void the_user_is_on_the_web_orders_page(){
+//        BrowserUtils.wait(1);
+//        Assert.assertEquals(pages.getWebOrdersPage().getCurrentUrl(), "http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/");
+//    }
 
     @Then("the user views the level {int} header is displayed as {string}")
     public void the_user_views_the_level_1_header_is_displayed_as(Integer levelOfHeader, String header){

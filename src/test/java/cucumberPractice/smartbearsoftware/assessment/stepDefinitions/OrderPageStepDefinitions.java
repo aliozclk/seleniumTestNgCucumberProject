@@ -1,6 +1,7 @@
 package cucumberPractice.smartbearsoftware.assessment.stepDefinitions;
 
 import cucumberPractice.smartbearsoftware.assessment.utilities.BrowserUtils;
+import cucumberPractice.smartbearsoftware.assessment.utilities.CommonExcelReader;
 import cucumberPractice.smartbearsoftware.assessment.utilities.ConfigurationReader;
 import cucumberPractice.smartbearsoftware.assessment.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -8,6 +9,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
 
 public class OrderPageStepDefinitions extends BaseStep{
     @Given("^the user is on the login page$")
@@ -34,6 +39,22 @@ public class OrderPageStepDefinitions extends BaseStep{
         BrowserUtils.wait(1);
         Assert.assertEquals(pages.getWebOrdersPage().getCurrentUrl(), "http://secure.smartbearsoftware.com/samples/testcomplete12/weborders/Default.aspx");
     }
+
+    //And the user wants to test cases: "<TestCase>" by retrieving the test data from Excel Workbook: "SmartbareSoftware" Sheet : "SmartbareSoftware_OrderPage"
+    @Given("And the user wants to test cases: {string} by retrieving the test data from Excel Workbook: {string} Sheet : {string}")
+    public void the_user_wants_data_from_excel(String caseName, String workbookName, String sheetName){
+        try {
+
+
+            CommonExcelReader excelReader = new CommonExcelReader();
+            HashMap excelData = excelReader.getDataFromExcel(caseName, workbookName, sheetName);
+        }
+        catch (IOException exception){
+
+        }
+
+    }
+
 
     @And("the user clicks on the order link")
     public void the_user_clicks_on_the_order_link() throws InterruptedException {
